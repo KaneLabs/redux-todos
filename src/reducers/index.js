@@ -5,11 +5,8 @@ const todoReducer = (state = [], action) => {
     case 'ADD_TODO':
       const nextStateWithNewTodo = state.concat([action.payload])
 
-      console.log('nextState: ', nextStateWithNewTodo);
-
       return nextStateWithNewTodo;
     case 'DELETE_TODO':
-    
         const nextStateWithoutTodo = state.filter((todo, i) => {
           if (i === action.payload) return false;
 
@@ -22,9 +19,9 @@ const todoReducer = (state = [], action) => {
   }
 }
 
-const filterReducer = (state = 'ALLOW_ALL', action) => {
+// doesnt do anything yet
+const filterReducer = (state = 'INITIAL_STATE', action) => {
   switch (action.type) {
-    case 'RESOLVED':
     default:
       return state;
   }

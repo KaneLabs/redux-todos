@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import { addTodo, deleteTodo } from './actions';
-
 import { connect } from 'react-redux';
+
+import { addTodo, deleteTodo } from '../actions';
+
+import Header from '../components/Header';
 
 class App extends React.Component {
   state = { addTodoText: '' }
@@ -21,7 +22,7 @@ class App extends React.Component {
     this.setState({ addTodoText: '' })
   }
 
-  render(){
+  render() {
     return (
       <div className="App">
         <Header />
@@ -29,7 +30,7 @@ class App extends React.Component {
         <form onSubmit={this.handleAddTodo}>
           <input onChange={this.handleAddTodoText} value={this.state.addTodoText} />
 
-          <button type={'submit'} />
+          <button type={'submit'} >ADD</button>
         </form>
 
         <ul>
@@ -45,7 +46,6 @@ class App extends React.Component {
         </ul>
       </div>
     );
-
   }
 }
 
